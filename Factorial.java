@@ -1,23 +1,31 @@
-package distt.function;
-import java.util.Scanner;
+package distt.Recursion;
 
 public class Factorial {
-    public static long fact(int n)
+    public static int fact(int n,int test)
     {
-        long ans=1;
-        for(int i=1;i<=n;i++)
+        if(n==1)
         {
-            ans=ans*i;
+            return 1;
         }
-        return ans;
+        test=test*n;
+        fact(n-1,test);
+        return test;
+    }
+    public static int facto(int n)
+    {
+        if(n==0)
+        {
+            return 1;
+        }
+        int fnm1=facto(n-1);
+        int fn=n*fnm1;
+        return fn;
     }
     public static void main(String args[])
     {
-        Scanner obj =new Scanner(System.in);
-        System.out.println("enetr number to calculate it's factorial");
-        int n=obj.nextInt();
-      //  long f=fact(n);
-        System.out.println(" factorial is "+fact(n));
+        System.out.println(facto(5));
+        int test=1;
+        System.out.println(fact(5,test));
     }
     
 }
