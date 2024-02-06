@@ -1,0 +1,52 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+class HelloWorld {
+    public static int convert(String str)
+    {
+        int res=0;
+         ArrayList<Integer>list=new ArrayList<>();
+         StringBuilder sb = new StringBuilder("");
+        for(int i=0;i<str.length();i++)
+        {
+            if(str.charAt(i)>='0'&&str.charAt(i)<='9')
+            {
+                int num=0;
+                for(int j=i;j<str.length();j++)
+                {
+                    if((str.charAt(j)>='0'&&str.charAt(j)<='9'))
+                    {
+                         sb.append(str.charAt(j));
+                         //System.out.println(sb);
+                         i++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                    
+                    // sb.append(ss.charAt(i));
+                    //sb.append(str.charAt(j));
+                }
+                num=Integer.parseInt(sb.toString());
+                System.out.println(num);
+                list.add(num);
+               // sb.setLength(0);
+                sb.setLength(0);
+                
+            }
+            
+        }
+        for(int i=0;i<list.size();i++)
+        {
+            res+=list.get(i);
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+        String str="Ab@#ghfsd456hj567_dhj+45gh)(f#8";
+        int ans=convert(str);
+        System.out.println(ans);
+    }
+}
